@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  synopsis: MyText
+  director: MyString
+  release_date: 2022-03-31
+
+two:
+  title: MyString
+  synopsis: MyText
+  director: MyString
+  release_date: 2022-03-31
