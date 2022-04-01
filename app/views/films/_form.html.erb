@@ -1,37 +1,14 @@
-<%= form_with(model: film) do |form| %>
-  <% if film.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(film.errors.count, "error") %> prohibited this film from being saved:</h2>
 
-      <ul>
-        <% film.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
 
-  <div class="field">
-    <%= form.label :synopsis %>
-    <%= form.text_area :synopsis %>
-  </div>
+<%= simple_form_for @film do |f| %>
+  <%= f.error_notification %>
 
-  <div class="field">
-    <%= form.label :director %>
-    <%= form.text_field :director %>
-  </div>
 
-  <div class="field">
-    <%= form.label :release_date %>
-    <%= form.date_select :release_date %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <%= f.input :title, class: ""%>
+  <%= f.input :synopsis, class: ""%>
+  <%= f.input :director, class: ""%>
+  <%= f.input :release_date, class: "" %>
+  <%= f.input :photo, class: "" %>
+  <%= f.button :submit, class: "btn btn-primary my-4"%>
 <% end %>

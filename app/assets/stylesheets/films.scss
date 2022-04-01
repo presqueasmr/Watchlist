@@ -1,3 +1,33 @@
 // Place all the styles related to the Films controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+*{
+  margin:0;
+  padding:0;
+  font-family: 'Jost', sans-serif;
+  font-weight: 200;
+}
+
+a.Logo_site{
+  text-decoration:none;
+  color: brown;
+}
+
+h1{
+  font-family: 'BIZ UDMincho', serif;
+}
+
+h2{
+    font-size: 16px;
+    font-family: 'BIZ UDMincho', serif;
+    span{
+      font-size: 20px;
+      font-weight: 400;
+      font-family: 'BIZ UDMincho', serif;
+
+    }
+}
+
+a{
+  font-weight: 400;
+}

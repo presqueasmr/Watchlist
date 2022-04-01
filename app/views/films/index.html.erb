@@ -1,33 +1,31 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Films</h1>
+<h1 class="fs-1 text-center my-5">Tous tes films</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Synopsis</th>
-      <th>Director</th>
-      <th>Release date</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @films.each do |film| %>
-      <tr>
-        <td><%= film.title %></td>
-        <td><%= film.synopsis %></td>
-        <td><%= film.director %></td>
-        <td><%= film.release_date %></td>
-        <td><%= link_to 'Show', film %></td>
-        <td><%= link_to 'Edit', edit_film_path(film) %></td>
-        <td><%= link_to 'Destroy', film, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="container">
+<a href="/">Back</a>
+  <% @films.each do |film| %>
+  <div class="row align-items-center shadow-sm p-3 mb-5 bg-body rounded my-4">
+
+
+    <div class="col-3 px-3 py-5">
+      <img src="<%= film.photo %>" alt="cover photo">
+    </div>
+    <div class="col-7 pl-3 pr-5 py-5">
+      <h2 class="mb-3">Titre : <span><%= film.title %></span></h2>
+      <p class="mb-2">Synopsis : <%= film.synopsis %></p>
+      <p class="mb-2">Réalisateur : <%= film.director %></p>
+      <p class="mb-2">Date de sortie : <%= film.release_date %></p>
+    </div>
+    <div class="col-2 px-3 py-5">
+
+      <%= link_to 'Edit', edit_film_path(film), class: "btn btn-primary px-4 my-1" %>
+      <%= link_to 'Destroy', film, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary px-4 my-1" %>
+    </div>
+  </div>
+  <% end %>
+  <%= link_to 'New Film', new_film_path %>
+</div>
 
 <br>
-
-<%= link_to 'New Film', new_film_path %>
