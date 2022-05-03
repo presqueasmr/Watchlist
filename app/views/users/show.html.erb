@@ -1,1 +1,11 @@
-<%= @user.email %>
+
+
+<h1 class="text-center fs-2">Mon Profil</h1>
+
+<a href="/" class="my-5">Back</a>
+
+<div class="containe shadow-sm p-3 mb-5 bg-body rounded py-5 px-5r">
+  <p><strong>E-mail :</strong> <%= @user.email %></p>
+  <p><strong>Pseudo : </strong><%= @user.pseudo %></p>
+  <p><strong>Created at : </strong><%= @user.created_at %></p>
+</div>

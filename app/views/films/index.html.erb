@@ -13,7 +13,7 @@
       <img class="img-thumbnail" src="<%= film.photo %>">
     </div>
     <div class="col-7 pl-3 pr-5 py-5">
-      <h2 class="mb-3">Titre : <span><%= film.title %></span></h2>
+      <h2 class="mb-3"><span class="fs-1"><%= film.title %></span></h2>
       <p class="mb-2">Synopsis : <%= film.synopsis %></p>
       <p class="mb-2">Réalisateur : <%= film.director %></p>
       <p class="mb-2">Date de sortie : <%= film.release_date %></p>
@@ -25,7 +25,7 @@
     </div>
   </div>
   <% end %>
-  <%= link_to 'New Film', new_film_path %>
+  <%= link_to '+ Ajouter un film', new_film_path, class: "d-flex justify-content-center btn btn-success mb-5" %>
 </div>
 
 <br>

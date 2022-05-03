@@ -15,6 +15,19 @@
 
     <header class="my-5 mx-5">
       <a class="Logo_site text-start fs-2 " href="/">Le Garde Film</a>
+      <br />
+      <%# <%=link_to 'Profil', show_user_path(@user), :class => 'navbar-link'%>
+      <p class="navbar-text diplay:end">
+        <% if user_signed_in? %>
+            <strong><%= current_user.pseudo %></strong>.
+            <%# <%= link_to 'Profile', show_users_path(@user), :class => 'navbar-link' %>
+            <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+            <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+        <% else %>
+            <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link ' %> |
+            <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+        <% end %>
+      </p>
     </header>
     <div class="container">
       <% if notice %>
@@ -24,16 +37,8 @@
         <p class="alert alert-danger"><%= alert %></p>
       <% end %>
       <%= yield %>
-      <p class="navbar-text float-right">
-        <% if user_signed_in? %>
-            Logged in as <strong><%= current_user.pseudo %></strong>.
-            <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-            <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-        <% else %>
-            <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-            <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-        <% end %>
-      </p>
+
+
     </div>
   </body>
 </html>

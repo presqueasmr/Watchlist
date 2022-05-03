@@ -68,3 +68,7 @@ class FilmsController < ApplicationController
       params.require(:film).permit(:title, :synopsis, :director, :release_date, :photo)
     end
 end
+
+  def to_s
+	"#{pseudo}"
+  end
